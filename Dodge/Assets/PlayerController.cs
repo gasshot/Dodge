@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody playerRigidbody;
+    public Rigidbody playerRigidbody;
     public float speed = 8f;
+    PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +26,13 @@ public class PlayerController : MonoBehaviour
 
         //Vector3 속도를 (xSpeed,0 , zSpeed)로 생성
         Vector3 newVelocity = new Vector3(xSpeed, 0, zSpeed);
-        playerRigidbody.velocity = newVelocity;
+        playerRigidbody.velocity = newVelocity; // 힘은 누적 speed * 60(1초당)
     }
 
 
     public void Die()
     {
         gameObject.SetActive(false);
+        playerController.enabled = false;
     }
 }

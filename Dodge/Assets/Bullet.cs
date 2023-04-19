@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
             if (playerController != null)
             {
                 playerController.Die();
+                
             }
         }
     }
