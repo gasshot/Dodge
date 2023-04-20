@@ -79,7 +79,7 @@ public class Player1 : MonoBehaviour
             Vector3 myVec = raycastHit.point - transform.position;
             Debug.DrawLine(myCamera.transform.position, raycastHit.point);
             Debug.Log(raycastHit.point + "목표");
-            Vector3 correctVec = myVec + transform.position;
+            Vector3 correctVec = myVec + transform.position; // 플레이어가 이동시 과거의 위치에서 myVec보면 어긋남 수정필요
             correctVec.y = transform.position.y;
             transform.LookAt(correctVec);
         }
