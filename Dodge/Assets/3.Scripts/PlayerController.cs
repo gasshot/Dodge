@@ -9,6 +9,13 @@ public class PlayerController : MonoBehaviour
     PlayerController playerController;
     GameManager gameManager;
     //PlayerController[] playerController;
+
+    public float curShield = 1;
+    public float maxShield = 5;
+    //public float curHealth = 1;
+
+    bool hasShields;
+
     // Start is called before the first frame update
     void Start()
     {

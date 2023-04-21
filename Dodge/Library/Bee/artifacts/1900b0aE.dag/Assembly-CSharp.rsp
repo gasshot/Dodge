@@ -351,6 +351,7 @@
 "Assets/3.Scripts/Player1.cs"
 "Assets/3.Scripts/PlayerController.cs"
 "Assets/3.Scripts/Rotator.cs"
+"Assets/3.Scripts/ShieldManager.cs"
 -langversion:9.0
 
 /deterministic

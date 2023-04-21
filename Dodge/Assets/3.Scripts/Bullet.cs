@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 8f; // 탄알 이동 속력
     private Rigidbody bulletRigidbody; // 이동에 사용할 리지드바디 컴포넌트
+                                       // 리지드바디 컴포넌트는 충돌 메세지를 발생시킨다
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // 트리거 충돌 시 자동으로 실행되는 메서드
@@ -40,10 +41,22 @@ public class Bullet : MonoBehaviour
             // 상대방으로부터 PlayerController 컴포넌트를 가져오는 데 성공한 경우
             if (playerController != null)
             {
-                // 상대방 PlayerController 컴포넌트의 Die() 메서드 실행
-                playerController.Die();
-                
+                if (playerController.curShield != 0)
+                {
+                    playerController.curShield -= 1;
+                }
+                else if (playerController.curShield == 0)
+                {
+                    //playerController.curHealth -= 1;
+                    // 상대방 PlayerController 컴포넌트의 Die() 메서드 실행
+                    playerController.Die();
+                }
             }
         }
+        else if (other.tag == "Level")
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 }

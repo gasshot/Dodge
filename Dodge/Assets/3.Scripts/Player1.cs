@@ -8,6 +8,7 @@ public class Player1 : MonoBehaviour
     public GameObject bullet;
     public Transform muzzlePosition;
     public Rigidbody playerRigidbody;
+
     public float speed = 8f;
     public float curShotDelay;
     public float maxShotDelay = 0.3f;

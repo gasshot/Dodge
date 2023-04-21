@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("SampleScene");
             }
         }
-
-
     }
     // 현재 게임을 게임오버 상태로 변경하는 메서드
     public void EndGame()
