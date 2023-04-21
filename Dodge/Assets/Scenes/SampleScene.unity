@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 784205109}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -609,6 +609,7 @@ MonoBehaviour:
   gameOverText: {fileID: 948013362}
   timeText: {fileID: 1757872179}
   recordText: {fileID: 1620145898}
+  surviveTime: 0
 --- !u!4 &784205110
 Transform:
   m_ObjectHideFlags: 0

@@ -5,17 +5,32 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
-    public float speed = 8f; // 탄알 이동 속력
+    static float speed = 3f; // 탄알 이동 속력
     private Rigidbody bulletRigidbody; // 이동에 사용할 리지드바디 컴포넌트
                                        // 리지드바디 컴포넌트는 충돌 메세지를 발생시킨다
-
+    //public GameObject gameObjectForCount;
+    GameManager gameManagerForCount;
+    GameObject gameObjectForCount;
     // Start is called before the first frame update
     void Start()
     {
         // 게임 오브젝트에서 Rigidbody 컴포넌트를 찾아 bulletRigidbody에 할당
         bulletRigidbody = GetComponent<Rigidbody>();
-
+        gameObjectForCount = GameObject.FindGameObjectWithTag("GameManager");
+        gameManagerForCount = gameObjectForCount.GetComponent<GameManager>();
         // 리지드바디의 속도 = 앞쪽 방향  * 이동속력
+        if(gameManagerForCount.surviveTime>10f)
+        {
+            speed = 5f;
+        }
+        else if (gameManagerForCount.surviveTime > 20f)
+        {
+            speed = 7f;
+        }
+        else if (gameManagerForCount.surviveTime > 30f)
+        {
+            speed = 9f;
+        }
         bulletRigidbody.velocity = transform.forward * speed;    //  지역 로컬 상의 Vector3(0,0,1)
         //bulletRigidbody.velocity = new Vector3(0,0,1) * speed; //  전역 로컬 상의 Vector3(0,0,1)
 

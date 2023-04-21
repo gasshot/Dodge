@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Text timeText; // 생존시간을 표시할 텍스트 컴포넌트
     public Text recordText; // 최고 기록을 표시할 텍스트 컴포넌트
 
-    private float surviveTime; // 생존 기간
+    public float surviveTime; // 생존 기간
     private bool isGameOver; // 게임 오버 상태
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("SampleScene");
             }
         }
+    }
+    public void HeisCome()
+    { 
+    
     }
     // 현재 게임을 게임오버 상태로 변경하는 메서드
     public void EndGame()
